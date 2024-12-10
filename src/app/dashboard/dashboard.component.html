@@ -1,3 +1,23 @@
-<app-button (buttonClickedEvent)="buttonClicked()" [showForm]="showForm"></app-button>
-<app-add-data *ngIf="showForm"></app-add-data>
-<app-data></app-data>
+<div class="container mt-5">
+    <!-- Button zum Öffnen/Schließen des Formulars -->
+    <div class="row justify-content-center">
+      <div class="col-lg-6 text-center">
+        <app-button (buttonClickedEvent)="buttonClicked()" [showForm]="showForm"></app-button>
+      </div>
+    </div>
+  
+    <!-- Formular zum Hinzufügen von Daten -->
+    <div class="row justify-content-center mt-4" *ngIf="showForm">
+      <div class="col-lg-8">
+        <app-add-data></app-add-data>
+      </div>
+    </div>
+  
+    <!-- Tabelle mit den Daten -->
+    <div class="row justify-content-center mt-5">
+      <div class="col-lg-11">
+        <app-data></app-data>
+      </div>
+    </div>
+  </div>
+  

@@ -5,10 +5,13 @@ import { ButtonComponent } from './button/button.component';
 import { CommonModule } from '@angular/common';
 import { StoreService } from '../shared/store.service';
 import { BackendService } from '../shared/backend.service';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [DataComponent, AddDataComponent, ButtonComponent, CommonModule],
+  imports: [DataComponent, AddDataComponent, ButtonComponent, CommonModule, ReactiveFormsModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })

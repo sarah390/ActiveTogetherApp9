@@ -12,11 +12,12 @@ export class BackendService {
   constructor(private http: HttpClient, private storeService: StoreService) { }
 
   public getCourses() {
-      this.http.get<Course[]>('http://localhost:5000/courses?_expand=eventLocation').subscribe(data => {
-        this.storeService.courses = data;
-        this.storeService.cousesLoading = false;
-      });
-  }
+    this.http.get<Course[]>('http://localhost:5000/courses?_expand=eventLocation').subscribe(data => {
+      this.storeService.courses = data;
+      this.storeService.cousesLoading = false;
+    });
+}
+  
 
   public getRegistrations(page: number) {
 

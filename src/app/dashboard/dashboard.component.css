@@ -1,0 +1,66 @@
+.container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Abstände zwischen den Elementen */
+  .row {
+    margin-bottom: 30px;
+  }
+  
+  /* Button zentrieren */
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+
+  .table-container {
+    margin-top: 20px;
+  }
+   
+  .banner-container {
+    display: flex;
+    gap: 75px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .banner-img {
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+  }
+  
+  .banner-img:hover {
+    transform: scale(1.4);
+  }
+
+  .btn-toggle-form {
+    background: #007bff;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-toggle-form:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  
+  

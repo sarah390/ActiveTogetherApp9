@@ -8,6 +8,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   templateUrl: './loading-spinner.component.html',
   styleUrl: './loading-spinner.component.css'
 })
-export class LoadingSpinnerComponent {
 
+export class LoadingSpinnerComponent {
 }

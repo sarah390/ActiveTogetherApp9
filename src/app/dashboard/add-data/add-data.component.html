@@ -1,11 +1,74 @@
-<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-    <h2>Zum Kurs anmelden!</h2>
-    <input placeholder="Name" type="input" formControlName="name"><br />
-    <input placeholder="Geburtsdatum" type="date" formControlName="birthdate"><br />
-    <select formControlName="courseId">
-        <option value="" disabled>Bitte auswählen</option>
-        <option *ngFor="let course of storeService.courses" [ngValue]="course.id">{{course.name}}, {{course.instructor}}</option>
-    </select>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10 col-12"> <!-- Grid-System: Desktop = 10 Spalten, Mobil = 12 Spalten -->
+      <div class="row align-items-center" style="min-height: 400px;"> <!-- Vertikale Zentrierung -->
+        <div class="col">
+          <h2 class="text-center mb-4">Zum Kurs anmelden</h2>
+          <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="p-4 bg-white rounded shadow">
+            
+            <!-- Name Eingabefeld -->
+            <div class="form-group mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input id="name" type="text" formControlName="name" class="form-control" />
+              <div class="text-danger" *ngIf="registrationForm.get('name')?.invalid && formSubmitted">
+                Name ist erforderlich!
+              </div>
+            </div>
 
-    <button type="submit">Erfassen</button>
-</form>
+            <!-- Geburtsdatum Eingabefeld -->
+            <div class="form-group mb-3">
+              <label for="birthdate" class="form-label">Geburtsdatum</label>
+              <input id="birthdate" type="date" formControlName="birthdate" class="form-control" />
+              <div class="text-danger" *ngIf="registrationForm.get('birthdate')?.invalid && formSubmitted">
+                Geburtsdatum ist erforderlich!
+              </div>
+              <div class="text-danger" *ngIf="registrationForm.get('birthdate')?.errors?.['max']">
+                Das Geburtsdatum darf nicht in der Zukunft liegen!
+              </div>
+            </div>
+
+            <!-- E-Mail Eingabefeld -->
+            <div class="form-group mb-3">
+              <label for="email" class="form-label">E-Mail</label>
+              <input id="email" type="email" formControlName="email" class="form-control" />
+              <div class="text-danger" *ngIf="registrationForm.get('email')?.errors?.['email']">
+                Bitte geben Sie eine gültige E-Mail-Adresse ein!
+              </div>
+              <div class="text-danger" *ngIf="registrationForm.get('email')?.invalid && formSubmitted">
+                E-Mail ist erforderlich!
+              </div>
+            </div>
+
+            <!-- Newsletter-Checkbox -->
+            <div class="form-check mb-3">
+              <input id="newsletter" type="checkbox" formControlName="newsletter" class="form-check-input" />
+              <label for="newsletter" class="form-check-label">Newsletter erhalten</label>
+            </div>
+
+            <!-- Kurs Dropdown -->
+            <div class="form-group mb-3">
+              <label for="courseId" class="form-label">Kurs auswählen</label>
+              <select id="courseId" formControlName="courseId" class="form-select">
+                <option value="" disabled selected>Bitte auswählen</option>
+                <option *ngFor="let course of storeService.courses" [value]="course.id">
+                  {{ course.name }} - {{ course.instructor }}
+                </option>
+              </select>
+              <div class="text-danger" *ngIf="registrationForm.get('courseId')?.invalid && formSubmitted">
+                Kursauswahl ist erforderlich!
+              </div>
+            </div>
+
+            <!-- Absenden Button -->
+            <button type="submit" class="btn btn-primary w-100">Erfassen</button>
+            
+            <!-- Erfolgsmeldung -->
+            <div class="alert alert-success mt-3" *ngIf="isRegistered">
+              Registrierung erfolgreich! Vielen Dank.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,9 +1,47 @@
-.flex {
-    display: flex;
+.header-logo {
+  width: 60px;
+  height: auto;
+  border-radius: 50%;
 }
 
-img {
-    width: 100%;
-    height: auto;
-    max-width: 200px;
+.header-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
 }
+
+.header-logo {
+  width: 70px; 
+  height: auto;
+  margin-right: 15px; 
+  border-radius: 50%;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  color: white;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #ffe066;
+}
+
+
+.custom-navbar {
+  height: 100px; /* Erhöhe die Höhe des Headers */
+  background: linear-gradient(to right, #92d075, #80cee8); 
+  display: flex;
+  align-items: center;
+  padding: 0 20px; /* Mehr Platz links und rechts */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+}
+
+/* Anpassung für kleinere Bildschirme */
+@media (max-width: 768px){
+  .navbar {
+    height: auto; 
+    padding: 10px; 
+  }
+}
+ 

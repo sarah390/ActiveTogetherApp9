@@ -5,11 +5,14 @@ import { BackendService } from './shared/backend.service';
 import { SharedModule } from './shared/shared.module';
 import { StoreService } from './shared/store.service';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, SharedModule, LoadingSpinnerComponent],
+  imports: [RouterOutlet, HeaderComponent, SharedModule, LoadingSpinnerComponent, ReactiveFormsModule, MatToolbarModule],
   providers: [BackendService, StoreService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
