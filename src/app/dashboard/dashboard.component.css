@@ -5,12 +5,14 @@
   
   /* Abstände zwischen den Elementen */
   .row {
-    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column; /* Stellt sicher, dass die Elemente vertikal ausgerichtet sind */
+    align-items: center;
   }
   
   /* Button zentrieren */
   button {
-    background-color: #007bff;
+    background-color: #40b0d5;
     color: white;
     padding: 10px 20px;
     font-size: 1.2rem;
@@ -20,7 +22,7 @@
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: #40b0d5;
     transform: scale(1.05);
   }
 
@@ -36,18 +38,18 @@
   }
   
   .banner-img {
-    height: 200px;
+    height: 300px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
   }
   
   .banner-img:hover {
-    transform: scale(1.4);
+    transform: scale(1.1);
   }
 
   .btn-toggle-form {
-    background: #007bff;
+    background: #40b0d5;
     color: white;
     font-size: 1.2rem;
     padding: 10px 20px;
@@ -55,12 +57,14 @@
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-top: 100px;
+    align-self: center;
   }
   
   .btn-toggle-form:hover {
-    background: #0056b3;
+    background: #40b0d5;
     transform: scale(1.05);
   }
-  
+ 
   
   

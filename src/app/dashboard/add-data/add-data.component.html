@@ -27,17 +27,20 @@
               </div>
             </div>
 
-            <!-- E-Mail Eingabefeld -->
             <div class="form-group mb-3">
               <label for="email" class="form-label">E-Mail</label>
               <input id="email" type="email" formControlName="email" class="form-control" />
-              <div class="text-danger" *ngIf="registrationForm.get('email')?.errors?.['email']">
+            
+              <!-- Fehleranzeige für ungültige E-Mail -->
+              <div class="text-danger" *ngIf="registrationForm.get('email')?.hasError('email') && registrationForm.get('email')?.touched">
                 Bitte geben Sie eine gültige E-Mail-Adresse ein!
               </div>
-              <div class="text-danger" *ngIf="registrationForm.get('email')?.invalid && formSubmitted">
+            
+              <!-- Fehleranzeige für erforderliche E-Mail -->
+              <div class="text-danger" *ngIf="registrationForm.get('email')?.hasError('required') && registrationForm.get('email')?.touched">
                 E-Mail ist erforderlich!
               </div>
-            </div>
+            </div>            
 
             <!-- Newsletter-Checkbox -->
             <div class="form-check mb-3">

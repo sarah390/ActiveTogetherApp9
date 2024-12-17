@@ -32,16 +32,17 @@ export class AddDataComponent implements OnInit {
     });
   }
 
-  onSubmit(): void {
-    this.formSubmitted = true;
-    if (this.registrationForm.valid) {
-      this.backendService.addRegistration(
-        this.registrationForm.value,
-        this.storeService.currentPage
-      );
-      this.isRegistered = true;
-      setTimeout(() => (this.isRegistered = false), 3000);
-      this.registrationForm.reset();
+    onSubmit(): void {
+      this.formSubmitted = true;
+      console.log(this.registrationForm.get('email')?.valid);  // Prüfen, ob das E-Mail-Feld gültig ist
+      if (this.registrationForm.valid) {
+        this.backendService.addRegistration(this.registrationForm.value, this.storeService.currentPage);
+        this.isRegistered = true;
+        setTimeout(() => (this.isRegistered = false), 8000);  // Erfolgsmeldung
+        this.registrationForm.reset();
+        this.formSubmitted = false;
+      } else {
+        console.log('Formular ist ungültig:', this.registrationForm);  // Gibt das gesamte Formular aus
+      }
     }
-  }
 }

@@ -1,14 +1,56 @@
-button.active {
-    background-color: orange;
+/* Styling für die Tabelle */
+.table {
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #8ac5d8;
 }
 
-table {
-    margin-top: 20px;
-  }
-  
-  td, th {
-    padding: 10px;
-    text-align: center; 
-    vertical-align: middle;
-  }
-  
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #8ac5d8;
+}
+
+.table th {
+  background-color: #40b0d5;
+  color: white;
+  font-weight: bold;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.table tbody tr:hover {
+  background-color: #8ac5d8;
+}
+
+/* Responsivität der Tabelle */
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* Styling für Listen in der "Alle Termine" Spalte */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 5px 0;
+}
+
+/* Styling für die Buttons */
+button {
+  background-color: #40b0d5;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #40b0d5;
+  transform: scale(1.05);
+}

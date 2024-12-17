@@ -147,6 +147,22 @@
       "courseId": "_iL775j",
       "birthdate": "1997-12-12",
       "id": 13
+    },
+    {
+      "name": "Lisa Müller",
+      "birthdate": "1994-09-02",
+      "email": "mueller@gmail.com",
+      "newsletter": true,
+      "courseId": "_iL775i",
+      "id": 14
+    },
+    {
+      "name": "Joe Smith",
+      "birthdate": "1990-04-05",
+      "email": "smith.joe@gmail.com",
+      "newsletter": true,
+      "courseId": "_iL775a",
+      "id": 15
     }
   ]
 }

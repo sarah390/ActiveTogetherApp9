@@ -1,8 +1,8 @@
 .mat-toolbar {
   background: linear-gradient(to right, #92d075, #80cee8); 
-  color: white; /* Textfarbe */
+  color: white;
   padding: 10px 20px;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Optional: Schatteneffekt */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); 
   display: flex;
   align-items: center;
 }
@@ -17,5 +17,5 @@
 
 .btn-outline-light:hover {
   background-color: white;
-  color: #4d9de0; /* Eine der Verlauf-Farben */
+  color: #4d9de0; 
 }

@@ -13,8 +13,9 @@ h2 {
     margin-bottom: 20px; 
     font-family: 'Roboto', sans-serif; 
     background: linear-gradient(to right, #6aa94d, #40b0d5);
+    background-clip: text;  
     -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
 }
 
 /* Styling für Formular */
@@ -34,7 +35,7 @@ form {
 }
 
 .form-control:focus, .form-select:focus {
-  border-color: #007bff;
+  border-color: #40b0d5;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
@@ -47,7 +48,7 @@ form {
 
 /* Button */
 button {
-  background-color: #007bff;
+  background-color: #40b0d5;
   border: none;
   color: white;
   font-size: 1.2rem;
@@ -56,7 +57,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #40b0d5;
   transform: scale(1.05);
 }
 

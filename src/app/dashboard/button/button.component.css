@@ -3,15 +3,16 @@ button {
     font-size: 1.2rem;
     padding: 10px 20px;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #40b0d5;
     color: white;
     border: none;
     transition: all 0.3s ease;
+    margin-top: 50px;
   }
   
   /* Hover-Effekt */
   button:hover {
-    background-color: #0056b3;
+    background-color: #40b0d5;
     transform: scale(1.05);
   }
   
