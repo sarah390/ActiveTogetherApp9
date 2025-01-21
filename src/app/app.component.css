@@ -19,3 +19,8 @@
   background-color: white;
   color: #4d9de0; 
 }
+.container {
+  padding-left: 10px !important; /* Überschreibt Bootstrap-Werte */
+  padding-right: 10px !important;
+}
+

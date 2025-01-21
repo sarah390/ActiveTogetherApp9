@@ -1,0 +1,165 @@
+.card {
+  border-radius: 10px;
+  background-color: #f8f9fa;
+}
+.filter-container .input-group {
+  margin-top: 28px;
+  width: 300px;
+}
+
+.heading-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #007bff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.filter-container .form-control {
+  font-size: 1rem;
+  padding: 0.75rem;
+  color: #495057;
+}
+
+.filter-container .form-control::placeholder {
+  color: #6c757d;
+  font-style: italic;
+}
+
+.filter-container .text-muted {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.table tbody tr.highlight {
+  background-color: #fdfd96; /* Gelbe Hervorhebung */
+  animation: fadeHighlight 2s ease-out;
+}
+
+@keyframes fadeHighlight {
+  0% {
+    background-color: #fffa70;
+  }
+  100% {
+    background-color: #ffffff;
+  }
+}
+
+.input-group {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.input-group .form-control {
+  border-radius: 50px 0 0 50px; /* Runde linke Ecken */
+  padding: 10px 20px;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.input-group .btn {
+  border-radius: 0 50px 50px 0; /* Runde rechte Ecken */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.input-group .btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.input-group .btn i {
+  font-size: 1.2rem;
+}
+
+.pagination-container span {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+.table {
+  background-color: white;
+  border-radius: 10px;
+  line-height: 1.9;
+}
+.table td, 
+.table th {
+  line-height: 1.8; /* Erhöht den Zeilenabstand */
+  padding: 15px; /* Zusätzlicher Innenabstand */
+}
+
+
+.table thead {
+  background-color: #e9ecef;
+  font-weight: bold;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f3f5;
+}
+
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Overlay für die Zeile */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+/* Spinner-Animation */
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Sort buttons styling */
+.sort-buttons button {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+  margin: 0 10px;
+}
+
+.sort-buttons button:hover {
+  color: #0056b3;
+  transform: scale(1.2);
+}
+
+.sort-buttons button:focus {
+  outline: none;
+}

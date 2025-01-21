@@ -9,7 +9,13 @@
             <!-- Name Eingabefeld -->
             <div class="form-group mb-3">
               <label for="name" class="form-label">Name</label>
-              <input id="name" type="text" formControlName="name" class="form-control" />
+              <input 
+                id="name" 
+                type="text" 
+                formControlName="name" 
+                class="form-control" 
+                placeholder="Max Mustermann"
+              />
               <div class="text-danger" *ngIf="registrationForm.get('name')?.invalid && formSubmitted">
                 Name ist erforderlich!
               </div>
@@ -18,7 +24,13 @@
             <!-- Geburtsdatum Eingabefeld -->
             <div class="form-group mb-3">
               <label for="birthdate" class="form-label">Geburtsdatum</label>
-              <input id="birthdate" type="date" formControlName="birthdate" class="form-control" />
+              <input 
+                id="birthdate" 
+                type="date" 
+                formControlName="birthdate" 
+                class="form-control" 
+                placeholder="TT.MM.JJJJ"
+              />
               <div class="text-danger" *ngIf="registrationForm.get('birthdate')?.invalid && formSubmitted">
                 Geburtsdatum ist erforderlich!
               </div>
@@ -27,16 +39,19 @@
               </div>
             </div>
 
+            <!-- E-Mail Eingabefeld -->
             <div class="form-group mb-3">
               <label for="email" class="form-label">E-Mail</label>
-              <input id="email" type="email" formControlName="email" class="form-control" />
-            
-              <!-- Fehleranzeige für ungültige E-Mail -->
+              <input 
+                id="email" 
+                type="email" 
+                formControlName="email" 
+                class="form-control" 
+                placeholder="beispiel@domain.at"
+              />
               <div class="text-danger" *ngIf="registrationForm.get('email')?.hasError('email') && registrationForm.get('email')?.touched">
                 Bitte geben Sie eine gültige E-Mail-Adresse ein!
               </div>
-            
-              <!-- Fehleranzeige für erforderliche E-Mail -->
               <div class="text-danger" *ngIf="registrationForm.get('email')?.hasError('required') && registrationForm.get('email')?.touched">
                 E-Mail ist erforderlich!
               </div>
@@ -44,14 +59,23 @@
 
             <!-- Newsletter-Checkbox -->
             <div class="form-check mb-3">
-              <input id="newsletter" type="checkbox" formControlName="newsletter" class="form-check-input" />
+              <input 
+                id="newsletter" 
+                type="checkbox" 
+                formControlName="newsletter" 
+                class="form-check-input" 
+              />
               <label for="newsletter" class="form-check-label">Newsletter erhalten</label>
             </div>
 
             <!-- Kurs Dropdown -->
             <div class="form-group mb-3">
               <label for="courseId" class="form-label">Kurs auswählen</label>
-              <select id="courseId" formControlName="courseId" class="form-select">
+              <select 
+                id="courseId" 
+                formControlName="courseId" 
+                class="form-select"
+              >
                 <option value="" disabled selected>Bitte auswählen</option>
                 <option *ngFor="let course of storeService.courses" [value]="course.id">
                   {{ course.name }} - {{ course.instructor }}

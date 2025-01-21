@@ -16,6 +16,14 @@ export class AddDataComponent implements OnInit {
   public isRegistered = false;
   public formSubmitted = false;
 
+  // Pagination properties
+  currentPage: number = 1; // Aktuelle Seite
+  registrationsPerPage: number = 5; // Anzahl der Registrierungen pro Seite
+  totalRegistrations: number = 0; // Gesamtanzahl der Registrierungen
+  paginatedRegistrations: any[] = []; 
+
+  Math = Math;
+
   constructor(
     private formBuilder: FormBuilder,
     public storeService: StoreService,
@@ -28,16 +36,19 @@ export class AddDataComponent implements OnInit {
       birthdate: [null, [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       newsletter: [false],
-      courseId: ['', [Validators.required]]
+      courseId: ['', [Validators.required]],
+      createdAt: new Date().toISOString(),
     });
   }
 
     onSubmit(): void {
       this.formSubmitted = true;
+      createdAt: new Date().toISOString(),
       console.log(this.registrationForm.get('email')?.valid);  // Prüfen, ob das E-Mail-Feld gültig ist
       if (this.registrationForm.valid) {
         this.backendService.addRegistration(this.registrationForm.value, this.storeService.currentPage);
         this.isRegistered = true;
+
         setTimeout(() => (this.isRegistered = false), 8000);  // Erfolgsmeldung
         this.registrationForm.reset();
         this.formSubmitted = false;

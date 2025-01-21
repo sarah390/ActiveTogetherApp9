@@ -1,0 +1,91 @@
+<div class="container mt-5">
+  <div class="text-center mb-4">
+    <h2 class="heading-title">Angemeldete Personen</h2>
+
+  <!-- Filter- und Pagination-Leiste -->
+  <div class="card p-3 mb-4 shadow-sm">
+    <div class="d-flex justify-content-between align-items-center flex-wrap">
+      <!-- Filter -->
+      <div class="filter-container mb-4">
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control rounded"
+            placeholder="Suche nach einem Teilnehmer/in"
+            #searchInput
+            (keyup.enter)="highlightRow(searchInput.value)"
+          />
+        </div>
+        <small class="text-muted d-block mt-1">Drücken Sie die Enter-Taste.</small>
+      </div>      
+
+      <!-- Pagination -->
+      <div class="pagination-container mb-2">
+        <button
+          class="btn btn-outline-secondary btn-sm"
+          (click)="previousPage()"
+          [disabled]="currentPage === 1"
+        >
+          Vorherige Seite
+        </button>
+        <span class="mx-2">Seite {{ currentPage }} von {{ totalPages }}</span>
+        <button
+          class="btn btn-outline-secondary btn-sm"
+          (click)="nextPage()"
+          [disabled]="currentPage === totalPages"
+        >
+          Nächste Seite
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Registrierungs-Tabelle -->
+  <table class="table table-bordered table-striped shadow-sm">
+    <thead class="table-light">
+      <tr>
+        <th>Name</th>
+        <th>Geburtsdatum</th>
+        <th>Kurs</th>
+        <th>
+          Anmeldedatum
+          <div class="d-flex justify-content-center mt-2">
+            <button class="btn btn-link p-0 me-1" (click)="sortByCreatedAt('asc')" title="Aufsteigend sortieren">
+              &#9650;
+            </button>
+            <button class="btn btn-link p-0" (click)="sortByCreatedAt('desc')" title="Absteigend sortieren">
+              &#9660;
+            </button>
+          </div>
+        </th>
+        <th>E-Mail</th>
+        <th>Newsletter</th>
+        <th>Aktionen</th>
+      </tr>
+    </thead>    
+    <tbody>
+      <tr *ngFor="let registration of filteredRegistrations">
+        <td>{{ registration.name }}</td>
+        <td>{{ registration.birthdate }}</td>
+        <td>{{ registration.courseId }}</td>
+        <td>{{ registration.createdAt | date:'d/M/yy' }}</td>
+        <td>{{ registration.email || 'Nicht angegeben' }}</td>
+        <td>{{ registration.newsletter ? 'Ja' : 'Nein' }}</td>
+        <td class="position-relative">
+          <!-- Ladeindikator (über ganze Zeile) -->
+          <div *ngIf="isLoadingRow[registration.id]" class="loading-overlay">
+            <div class="spinner"></div>
+          </div>
+          <button
+            class="btn btn-danger btn-sm"
+            [disabled]="isLoadingRow[registration.id]"
+            (click)="confirmDelete(registration.id)"
+            title="Anmeldung löschen"
+          >
+            Abmelden
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

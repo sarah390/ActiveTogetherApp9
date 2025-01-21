@@ -19,7 +19,7 @@ export class BackendService {
 }
   
 
-  public getRegistrations(page: number) {
+  public getRegistrations(page: number, sortOrder: 'asc' | 'desc' = 'asc') {
 
     const options = {
       observe: 'response' as const,
@@ -28,7 +28,7 @@ export class BackendService {
       }
     };
 
-    this.http.get<Registration[]>(`http://localhost:5000/registrations?_expand=course&_page=${page}&_limit=2`, options).subscribe(data => {
+    this.http.get<Registration[]>(`http://localhost:5000/registrations?_expand=course&_page=${page}&_limit=2&_sort=createdAt&_order=${sortOrder}`, options).subscribe(data => {
       this.storeService.registrations = data.body!;
       this.storeService.registrationTotalCount = Number(data.headers.get('X-Total-Count'));
       this.storeService.registrationsLoading = false;
